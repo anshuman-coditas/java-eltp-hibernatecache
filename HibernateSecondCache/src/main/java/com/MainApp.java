@@ -23,6 +23,13 @@ public class MainApp {
 
         }catch(Exception e){
             e.printStackTrace();
+        }finally {
+            if(session.isOpen())
+                session.close();
+            if(session1.isOpen())
+                session1.close();
+            if(sessionFactory.isOpen())
+                sessionFactory.close();
         }
 
     }
